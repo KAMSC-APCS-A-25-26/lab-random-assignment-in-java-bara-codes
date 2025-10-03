@@ -1,7 +1,18 @@
 import java.util.Random;
+import java.text.DecimalFormat;
 
 public class RandomPercentage {
     public static void main(String[] args) {
+        Random rand = new Random();
+        Random randseeded = new Random(3);
+        DecimalFormat df = new DecimalFormat("##.00%");
+
+        double percent1 = rand.nextDouble();
+        double percent2 = randseeded.nextDouble();
+
+        System.out.println("Unseeded Random: " + df.format(percent1));
+        System.out.print("Seeded Random: " + df.format(percent2));
+
         // TODO: Create two Random objects
         // 1. One Random object without a seed (unseeded)
         // 2. One Random object with any seed value (seeded)
